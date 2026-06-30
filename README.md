@@ -1,4 +1,4 @@
-# World Cup Goal Monitor
+# CuponAR - World Cup Goal Monitor
 
 Real-time push notifications whenever a goal is scored in the FIFA World Cup. No paid API, no signup required.
 
@@ -14,7 +14,7 @@ This is a small personal-use script, not a production service. Expect ESPN's dat
 
 ### 1. Get the ntfy app
 
-Install **ntfy** from the App Store, Google Play, or use [ntfy.sh/app](https://ntfy.sh/app) in a browser. Subscribe to a topic name of your choice — think of it as a channel name. Anyone who knows the name can subscribe, so pick something reasonably unique (e.g. `worldcup-yourname-2026`).
+Install **ntfy** from the App Store, Google Play, or use [ntfy.sh/app](https://ntfy.sh/app) in a browser. Subscribe to a topic name of your choice, think of it as a channel name. Anyone who knows the name can subscribe, so pick something reasonably unique (e.g. `worldcup-yourname-2026`).
 
 ### 2. Configure the script
 
@@ -33,7 +33,7 @@ export NTFY_TOPIC="worldcup-yourname-2026"
 ### 3. Install and run
 
 ```bash
-pip install -r requirements.txt
+pip -m install -r requirements.txt
 python monitor.py
 ```
 
@@ -41,7 +41,7 @@ Leave the terminal running. You'll get a notification on your phone the moment a
 
 ## What you'll see
 
-The console logs live activity only — kickoffs, score updates, and when it's sleeping until the next match. Errors don't clutter the console; they're written to `errors.log` in the same folder, with a timestamp and full traceback, so you can let this run in the background and check the log later if something looks off.
+The console logs live activity only as kickoffs, score updates, and when it's sleeping until the next match. Errors don't clutter the console, they're written to `errors.log` in the same folder, with a timestamp and full traceback, so you can let this run in the background and check the log later if something looks off.
 
 ## Configuration reference
 
@@ -53,7 +53,7 @@ The console logs live activity only — kickoffs, score updates, and when it's s
 | `SCHEDULE_LOOKAHEAD_DAYS` | How far ahead to search for the next match | `14` |
 | `START_BUFFER_SECONDS` | Start polling this many seconds before kickoff | `60` |
 
-A note on `POLL_LIVE = 1`: ESPN doesn't publish a rate limit for this endpoint, but polling every second for hours at a time is aggressive and could eventually get you rate-limited (HTTP 429). If that happens, bumping it up to 10–20 seconds is the fix — you'll still get notified well within real-time relevance for a goal.
+A note on `POLL_LIVE = 1`: ESPN doesn't publish a rate limit for this endpoint, but polling every second for hours at a time is aggressive and could eventually get you rate limited (HTTP 429). If that happens, bumping it up to 10–20 seconds is the fix and you'll still get notified well within real time relevance for a goal.
 
 ## Handles multiple matches at once
 
@@ -83,7 +83,7 @@ Create a bot via [@BotFather](https://t.me/BotFather) on Telegram to get a token
 This needs to stay running to notify you. Options:
 
 - Leave it running in a terminal on your machine while the tournament is on.
-- Run it on a small VPS (~$5/month on most providers) or a Raspberry Pi if you want it always-on without keeping your computer awake.
+- Run it on a small VPS (~$5/month on most providers) or a Raspberry Pi if you want it always on without keeping your computer awake.
 - On Linux/macOS, `nohup python monitor.py &` keeps it alive after closing the terminal.
 
 ## Known limitations
@@ -99,3 +99,22 @@ requests>=2.31.0
 ```
 
 Python 3.10+ (uses the `X | Y` type hint syntax).
+
+# Oid mortales.
+
+Estaba cansada de no sacar ningún cupón de cierta aplicación roja de delivery
+y dije "no laburo con Python en el día a día pero por algo pago la subscripción
+de Claude y por algo fui a la universidad". Me levanté de la siesta con esta 
+idea no revolucionaria pero atada con alambres como toda magia argentina, culo,
+silla y Claude.
+Gracias al motivo de este proyecto, está configurado un rate
+animal cada 1 segundo para los requests a la api de ESPN. Me comprometo a
+avisar si algún día recibo un bloqueo.
+Si notás que hay cosas obvias explicadas, es una nota mental para irme
+familiarizando con Python. Trabajo con lenguajes muy estructurados, teneme
+paciencia.
+
+Nota: porque lo haya hecho con Claude no significa que no le haya pegado una leída
+para ver si tenía sentido. Agregué varias cosas en la marcha, recibo sugerencias.
+#
+
