@@ -2,6 +2,10 @@
 
 Real-time push notifications whenever a goal is scored in the FIFA World Cup. No paid API, no signup required.
 
+<img width="749" height="500" alt="1" src="https://github.com/user-attachments/assets/d818d5c9-eee3-4b97-b393-b2d529e4784e" />
+
+<img width="346" height="475" alt="2" src="https://github.com/user-attachments/assets/d6fc7daa-5c45-4a92-a32e-3a9cdc8d1220" />
+
 ## How it works
 
 - **Data source:** ESPN's public (unofficial) scoreboard API. No API key needed.
